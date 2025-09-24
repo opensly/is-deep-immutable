@@ -1,0 +1,52 @@
+{
+  "name": "is-deep-immutable",
+  "version": "1.0.0",
+  "description": "TypeScript-first utility to check deep immutability in JavaScript objects",
+  "type": "module",
+  "main": "./index.js",
+  "types": "./index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./index.d.ts",
+      "import": "./index.js"
+    }
+  },
+  "files": [
+    "*.js",
+    "*.d.ts",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc && npm run copy-dist",
+    "copy-dist": "cp dist/* . && echo 'Copied dist files to root'",
+    "clean": "rm -f *.js *.d.ts *.js.map",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "prepublishOnly": "npm run build && npm test",
+    "postpublish": "npm run clean"
+  },
+  "keywords": [
+    "immutable",
+    "typescript",
+    "deep",
+    "freeze",
+    "readonly"
+  ],
+  "author": "opensly",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/opensly/is-deep-immutable.git"
+  },
+  "bugs": {
+    "url": "https://github.com/opensly/is-deep-immutable/issues"
+  },
+  "homepage": "https://github.com/opensly/is-deep-immutable#readme",
+  "engines": {
+    "node": ">=18"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0",
+    "vitest": "^1.0.0"
+  }
+}
